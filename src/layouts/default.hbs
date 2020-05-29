@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{#ifCond model.name '==' project.name}}{{project.name}}{{else}}{{model.name}} | {{project.name}}{{/ifCond}}</title>
+    <meta name="description" content="Documentation for {{project.name}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{relativeURL "assets/css/main.css"}}">
+    <style>
+        .tsd-page-toolbar .header__project {
+            color: #581362;
+            {{!-- color: #0e6c4e; --}}
+            {{!-- color: #072018; --}}
+            font-weight: bold;
+        }
+
+        .tsd-page-toolbar .header__link {
+            color: #212881;
+            font-size: 14px;
+        }
+
+        .tsd-page-toolbar a.header__link_normal {
+            font-weight: normal;
+        }
+
+        .tsd-page-toolbar {
+            background: #f1f7f7;
+        }
+
+        {{#if settings.showGoTop}}
+        .go-top {
+            background: #cae1e1;
+            border-radius: 4px;
+            bottom: 20px;
+            display: none;
+            height: 40px;
+            opacity: 0.7;
+            position: fixed;
+            right: 20px;
+            width: 40px;
+        }
+        .go-top:hover {
+            border: 1px solid #4c5e80;
+            box-sizing: border-box;
+            opacity: 1;
+        }
+        .go-top_show {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .go-top::after {
+            border-bottom: 20px solid #4c5e80;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+            content: '';
+            height: 0;
+            width: 0;
+        }
+        {{/if}}
+        {{#if settings.style}}{{{settings.style}}}{{/if}}
+    </style>
+</head>
+<body>
+
+{{> header}}
+
+<div class="container container-main">
+    <div class="row">
+        <div class="col-8 col-content">
+            {{{contents}}}
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+            <nav class="tsd-navigation primary">
+                <ul>
+                    {{#each navigation.children}}
+                        {{> navigation}}
+                    {{/each}}
+                </ul>
+            </nav>
+
+            <nav class="tsd-navigation secondary menu-sticky">
+                <ul class="before-current">
+                    {{#each toc.children}}
+                        {{> toc.root}}
+                    {{/each}}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+{{> footer}}
+
+<div class="overlay"></div>
+{{#if settings.showGoTop}}
+<a href="#top" class="go-top"></a>
+{{/if}}
+<script src="{{relativeURL "assets/js/main.js"}}"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="{{relativeURL "assets/js/search.js"}}"><' + '/script>');</script>
+
+{{> analytics}}
+
+{{#ifCond settings.showGoTop '||' settings.script}}
+<script>
+    {{#if settings.showGoTop}}
+    typedoc.lightTheme = {};
+    typedoc.lightTheme.onScroll = function onScroll(event) {
+        document.getElementsByClassName('go-top')[0].classList[
+            event.detail.scrollTop > document.documentElement.clientHeight * {{settings.showGoTop}} * 0.01
+                ? 'add'
+                : 'remove'
+        ]('go-top_show');
+    };
+    typedoc.viewport.addEventListener('scroll', typedoc.lightTheme.onScroll);
+    {{/if}}
+    {{#if settings.script}}{{{settings.script}}}{{/if}}
+</script>
+{{/ifCond}}
+</body>
+</html>

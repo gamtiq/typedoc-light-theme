@@ -1,0 +1,51 @@
+{
+  "name": "typedoc-light-theme",
+  "version": "1.0.0",
+  "description": "TypeDoc theme that adds some useful options (header links, custom style and script, ability to create files etc)",
+  "main": "index.js",
+  "dependencies": {
+    "makef": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "6.x.x || 7.0.x || 7.1.x",
+    "eslint-config-guard": "1.1.x",
+    "husky": "^4.2.5"
+  },
+  "scripts": {
+    "lint": "eslint --cache --max-warnings 0 *.js",
+    "lint-error": "eslint --cache index.js \"src/**/*.js\"",
+    "lint-all": "eslint --max-warnings 0 index.js \"src/**/*.js\"",
+    "lint-all-error": "eslint index.js \"src/**/*.js\"",
+    "check": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gamtiq/typedoc-light-theme.git"
+  },
+  "keywords": [
+    "typedoc",
+    "custom",
+    "theme",
+    "typedoc-theme",
+    "typescript",
+    "documentation",
+    "generator",
+    "typedocplugin",
+    "extend",
+    "customize",
+    "customization",
+    "style",
+    "script",
+    "create",
+    "file"
+  ],
+  "author": "Denis Sikuler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gamtiq/typedoc-light-theme/issues"
+  },
+  "homepage": "https://github.com/gamtiq/typedoc-light-theme#readme",
+  "peerDependencies": {
+    "typedoc": ">=0.17.0"
+  }
+}
