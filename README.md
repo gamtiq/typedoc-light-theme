@@ -181,6 +181,11 @@ Example:
 "toolbarBackground": "linear-gradient(#def, #fff)"
 ```
 
+## Related projects <a name="related"></a> [&#x2191;](#start)
+
+* [jsdoc-file](https://github.com/gamtiq/jsdoc-file) - JSDoc plugin to create files inside directory of generated documentation (e.g. `.nojekyll` etc).
+* [makef](https://github.com/gamtiq/makef) - a utility to create files inside specified directory.
+
 ## License <a name="license"></a> [&#x2191;](#start)
 Copyright (c) 2020 Denis Sikuler  
 Licensed under the MIT license.
