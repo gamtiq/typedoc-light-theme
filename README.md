@@ -10,6 +10,8 @@
 * to create some files in documentation directory;
 * and others.
 
+[Demo](https://gamtiq.github.io/wrapme/)
+
 ## Usage <a name="usage"></a> [&#x2191;](#start)
 
 Installation:
