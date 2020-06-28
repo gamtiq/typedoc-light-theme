@@ -137,8 +137,8 @@ Example:
 ```json
 "projectName": {
     "link": true,
-    "before": "&star; ",
-    "after": " &star;"
+    "before": "<span class=\"title\">&star; </span>",
+    "after": "<span class=\"title\"> &star;</span>"
 }
 ```
 
