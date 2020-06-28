@@ -1,9 +1,10 @@
 {
   "name": "typedoc-light-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeDoc theme that adds some useful options (header links, custom style and script, ability to create files etc)",
   "main": "index.js",
   "dependencies": {
+    "@jsdevtools/version-bump-prompt": "^6.0.3",
     "makef": "^1.0.0"
   },
   "devDependencies": {
@@ -16,7 +17,10 @@
     "lint-error": "eslint --cache index.js \"src/**/*.js\"",
     "lint-all": "eslint --max-warnings 0 index.js \"src/**/*.js\"",
     "lint-all-error": "eslint index.js \"src/**/*.js\"",
-    "check": "npm run lint"
+    "check": "npm run lint",
+    "release": "bump patch --commit --tag --all --push",
+    "release-minor": "bump minor --commit --tag --all --push",
+    "release-major": "bump major --commit --tag --all --push"
   },
   "repository": {
     "type": "git",
