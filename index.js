@@ -1,10 +1,13 @@
 const { ParameterType } = require('typedoc/dist/lib/utils/options/declaration');
-const CreateFilePlugin = require('./plugin').CreateFileTypeDocPlugin;
+const CreateFilePlugin = require('./plugin/createFile').CreateFileTypeDocPlugin;
+const LightTypeDocPlugin = require('./plugin/light').LightTypeDocPlugin;
 
 // eslint-disable-next-line func-names
 module.exports = function(PluginHost) {
     const app = PluginHost.owner;
     const options = app.options;
+    const renderer = app.application.renderer;
+
     /*
      * Expected array:
      *  interface Link {
@@ -87,5 +90,6 @@ module.exports = function(PluginHost) {
         options.addDeclaration({ name: 'createFile', type: ParameterType.Mixed });
     }
 
-    app.application.renderer.addComponent(CreateFilePlugin.ID, CreateFilePlugin);
+    renderer.addComponent(CreateFilePlugin.ID, CreateFilePlugin);
+    renderer.addComponent(LightTypeDocPlugin.ID, LightTypeDocPlugin);
 };

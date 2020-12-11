@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "@jsdevtools/version-bump-prompt": "^6.0.3",
-    "makef": "^1.0.0"
+    "handlebars": "^4.7.6",
+    "makef": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "6.x.x || 7.0.x || 7.1.x",

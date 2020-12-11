@@ -1,0 +1,50 @@
+.tsd-page-toolbar .header__project {
+    color: #581362;
+    font-weight: bold;
+}
+
+.tsd-page-toolbar .header__link {
+    color: #212881;
+    font-size: 14px;
+}
+
+.tsd-page-toolbar a.header__link_normal {
+    font-weight: normal;
+}
+
+.tsd-page-toolbar {
+    background: #f1f7f7;
+}
+
+{{#if settings.showGoTop}}
+.go-top {
+    background: #cae1e1;
+    border-radius: 4px;
+    bottom: 20px;
+    display: none;
+    height: 40px;
+    opacity: 0.7;
+    position: fixed;
+    right: 20px;
+    width: 40px;
+}
+.go-top:hover {
+    border: 1px solid #4c5e80;
+    box-sizing: border-box;
+    opacity: 1;
+}
+.go-top_show {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.go-top::after {
+    border-bottom: 20px solid #4c5e80;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+}
+{{/if}}
+{{#if settings.style}}{{{settings.style}}}{{/if}}
