@@ -1,3 +1,4 @@
+// eslint-disable-next-line node/no-missing-require
 const { ParameterType } = require('typedoc/dist/lib/utils/options/declaration');
 const CreateFilePlugin = require('./plugin/createFile').CreateFileTypeDocPlugin;
 const LightTypeDocPlugin = require('./plugin/light').LightTypeDocPlugin;

@@ -4,14 +4,15 @@
   "description": "TypeDoc theme that adds some useful options (header links, custom style and script, ability to create files etc)",
   "main": "index.js",
   "dependencies": {
-    "@jsdevtools/version-bump-prompt": "^6.0.3",
     "handlebars": "^4.7.6",
     "makef": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "6.x.x || 7.0.x || 7.1.x",
-    "eslint-config-guard": "1.1.x",
-    "husky": "^4.2.5"
+    "@jsdevtools/version-bump-prompt": "^6.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-guard": "^2.0.1",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^4.3.5"
   },
   "scripts": {
     "lint": "eslint --cache --max-warnings 0 *.js",
